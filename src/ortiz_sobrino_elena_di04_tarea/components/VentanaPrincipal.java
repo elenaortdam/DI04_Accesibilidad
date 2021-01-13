@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ortiz_sobrino_elena_di04_tarea;
+package ortiz_sobrino_elena_di04_tarea.components;
 
 /**
  *
@@ -33,8 +33,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        fontLabel = new javax.swing.JLabel();
-        jMenuBar2 = new javax.swing.JMenuBar();
+        jPanel1 = new javax.swing.JPanel();
+        panelInstrucciones = new javax.swing.JScrollPane();
+        instruccionesTextArea = new javax.swing.JTextArea();
+        jLabelIcon = new javax.swing.JLabel();
+        barraMenu = new javax.swing.JMenuBar();
         plannerButton = new javax.swing.JMenu();
         plannerItem = new javax.swing.JMenuItem();
         accesibilidadButton = new javax.swing.JMenu();
@@ -49,7 +52,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fontLabel.setText("Cambiar fuentes");
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Instrucciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 14))); // NOI18N
+
+        instruccionesTextArea.setEditable(false);
+        instruccionesTextArea.setColumns(20);
+        instruccionesTextArea.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        instruccionesTextArea.setRows(5);
+        instruccionesTextArea.setText("Planificador: \nuse el planificador para ejecutar los programas que desee a una fecha y hora\n determinados\n\nAccesibilidad: \nPermite editar configuraciones del programa como el tema o el \ntamaño de la fuente\n");
+        panelInstrucciones.setViewportView(instruccionesTextArea);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jLabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ortiz_sobrino_elena_di04_tarea/images/planner_icon.png"))); // NOI18N
 
         plannerButton.setText("Planificador");
 
@@ -62,7 +90,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         plannerButton.add(plannerItem);
 
-        jMenuBar2.add(plannerButton);
+        barraMenu.add(plannerButton);
 
         accesibilidadButton.setText("Accesibilidad");
 
@@ -84,25 +112,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         accesibilidadButton.add(changeFontSize);
 
-        jMenuBar2.add(accesibilidadButton);
+        barraMenu.add(accesibilidadButton);
 
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(fontLabel)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabelIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(fontLabel)
-                .addContainerGap(189, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,13 +196,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesibilidadButton;
+    private javax.swing.JMenuBar barraMenu;
     private javax.swing.JCheckBoxMenuItem changeFontSize;
     private javax.swing.JCheckBoxMenuItem changeTheme;
-    private javax.swing.JLabel fontLabel;
+    private javax.swing.JTextArea instruccionesTextArea;
+    private javax.swing.JLabel jLabelIcon;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane panelInstrucciones;
     private javax.swing.JMenu plannerButton;
     private javax.swing.JMenuItem plannerItem;
     // End of variables declaration//GEN-END:variables

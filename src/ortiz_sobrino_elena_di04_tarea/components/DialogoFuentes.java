@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ortiz_sobrino_elena_di04_tarea;
+package ortiz_sobrino_elena_di04_tarea.components;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.SpinnerModel;
 import javax.swing.UIManager;
 import javax.swing.plaf.FontUIResource;
@@ -51,30 +52,6 @@ public class DialogoFuentes extends javax.swing.JDialog {
         return compList;
     }
 
-    private void changeFontSize(FontUIResource f) {
-        FontUIResource font1 = (FontUIResource) UIManager.getDefaults().get("InternalFrame.Font");
-        for (Component c : ventana.getComponents()) {
-            if (c instanceof JLabel) {
-                JLabel label = (JLabel) c;
-                String text = label.getText();
-                label.setFont(new Font(f.getFontName(), 0, f.getSize()));
-            }
-        }
-
-    }
-
-    /*
-        Enumeration keys = UIManager.getDefaults().keys();
-        while (keys.hasMoreElements()) {
-            Object key = keys.nextElement();
-            Object value = UIManager.get(key);
-            if (value instanceof FontUIResource) {
-                FontUIResource orig = (FontUIResource) value;
-                Font font = new Font(f.getFontName(), orig.getStyle(), f.getSize());
-                UIManager.put(key, new FontUIResource(font));
-            }
-        }
-     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -163,7 +140,7 @@ public class DialogoFuentes extends javax.swing.JDialog {
     private void changeFontSize(Container container, int fontSize) {
         List<Component> components = getAllComponents(container, new ArrayList<>());
         for (Component component : components) {
-            if (component instanceof JLabel) {
+            if (component instanceof JLabel || component instanceof JTextArea) {
                 Font font = new Font(component.getFont().getName(), 0, fontSize);
                 component.setFont(font);
             }

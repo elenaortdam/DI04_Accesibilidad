@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ortiz_sobrino_elena_di04_tarea;
+package ortiz_sobrino_elena_di04_tarea.components;
+
+import java.awt.Font;
 
 /**
  *
