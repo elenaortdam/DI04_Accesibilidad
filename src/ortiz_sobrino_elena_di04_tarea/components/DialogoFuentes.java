@@ -37,8 +37,6 @@ public class DialogoFuentes extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(ventana);
         ventana.getSize().getWidth();
-
-        FontUIResource font = (FontUIResource) UIManager.getDefaults().get("InternalFrame.Font");
     }
 
     private List<Component> getAllComponents(Container c, List<Component> compList) {
